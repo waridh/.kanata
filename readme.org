@@ -7,3 +7,4 @@ It also includes quick setup instructions for different operating systems, since
 Setting up =kanata= on the MacBook requires some =launchd= configuration to have the service start with the machine.
 *** Resources
 - [[https://github.com/jtroo/kanata/discussions/1537][link to tutorial for configuration of kanata on macos]] :: provides information on how to make a service for macos, as well as macos 26 settings.
+- [[https://github.com/jtroo/kanata/issues/975#issuecomment-2155593193][how to setup fn keys on macos]] ::
