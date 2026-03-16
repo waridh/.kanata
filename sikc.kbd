@@ -300,7 +300,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @hra @hrs @hrd @hrf g    h    @hrj @hrk @hrl @hrsc    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @fnl   lctl lmet lalt           spc            ralt rmet 
+  @fnl lctl tab lalt spc            ralt rmet
 )
 
 ;; macOS function key glyphs
