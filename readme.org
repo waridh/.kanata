@@ -1,0 +1,9 @@
+#+title: Readme
+* Overview
+This repository contains my personal configuration for =kanata=.
+It also includes quick setup instructions for different operating systems, since =katana= is cross-platform.
+* Setup
+** macos
+Setting up =kanata= on the MacBook requires some =launchd= configuration to have the service start with the machine.
+*** Resources
+- [[https://github.com/jtroo/kanata/discussions/1537][link to tutorial for configuration of kanata on macos]] :: provides information on how to make a service for macos, as well as macos 26 settings.

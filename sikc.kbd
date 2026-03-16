@@ -118,7 +118,7 @@
   ;; work correctly if they are intercepted. E.g. rctl/altgr on Windows; see the
   ;; windows-altgr configuration item above for context.
   ;;
-  ;; process-unmapped-keys yes
+  process-unmapped-keys yes
 
   ;; We need to set it to yes in this kanata.kbd example config to allow the use of __ and ___
   ;; in the deflayer-custom-map example below in the file
@@ -283,22 +283,35 @@
 ;; have the same number of keys as defsrc. Any keys not listed in defsrc will
 ;; be passed straight to the operating system.
 (defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  fn   lctl lmet lalt           spc            ralt rmet 
 )
 
 ;; The first layer defined is the layer that will be active by default when
 ;; kanata starts up. This layer is the standard QWERTY layout except for the
 ;; backtick/grave key (@grl) which is an alias for a tap-hold key.
 (deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @hra @hrs @hrd @hrf g    h    @hrj @hrk @hrl @hrsc    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  @fnl   lctl lmet lalt           spc            ralt rmet 
+)
+
+;; macOS function key glyphs
+(deflayer fn
+;;_     brdn  brup  @mc   @sls  @dtn  @dnd  prev  pp    next  mute  vold  volu
+  _     🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊 
+  _     _     _     _     _     _     _     _     _     _     _     _     _     del
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     @lp   _     _     _     
+  _     _     _     _     _     _     _     _     _     _     _     _     
+  _     _     _     _                 _                 _     _     
 )
 
 ;; defalias is used to declare a shortcut for a more complicated action to keep
@@ -327,6 +340,15 @@
   hrk (tap-hold 200 200 k rctl)
   hrl (tap-hold 200 200 l lalt)
   hrsc (tap-hold 200 200 ; rmet)
+
+  ;; fn layer stuff
+  fnl (tap-hold 200 200 fn (layer-toggle fn))
+
+  mc C-up ;; Mission Control
+  sls M-spc ;; Spotlight Search
+  dtn S-C-A-M-f5 ;; Dictation
+  dnd S-C-A-M-f6 ;; Do Not Disturb
+  lp S-C-A-M-l ;; Launchpad
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
@@ -339,9 +361,10 @@
 ;; underscore _ which means "transparent". Transparent means the base layer
 ;; behaviour is used when pressing that key.
 (deflayer layers
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   _    @qwr _ lrld _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _
+  _    _    _    _              _              _    _    
 )
