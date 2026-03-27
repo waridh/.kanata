@@ -300,7 +300,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @hra @hrs @hrd @hrf g    h    @hrj @hrk @hrl @hrsc    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @fnl lctl lalt tab  spc            rmet ralt
+  @fnl lctl lalt @lcmdl  spc            rmet ralt
 )
 
 ;; macOS function key glyphs
@@ -312,6 +312,17 @@
   _     _     _     _     _     _     _     _     _     @lp   _     _     _     
   _     _     _     _     _     _     _     _     _     _     _     _     
   _     _     _     _                 _                 _     _     
+)
+
+;; layer for the left cmd key being held down
+(deflayer lcmdl
+;;_     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     ◀     ▼    ▲     ▶     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _                 _                 _     _
 )
 
 ;; defalias is used to declare a shortcut for a more complicated action to keep
@@ -343,6 +354,8 @@
 
   ;; fn layer stuff
   fnl (tap-hold 200 200 fn (layer-toggle fn))
+  ;; left command layer stuff
+  lcmdl (tap-hold 200 200 tab (layer-toggle lcmdl))
 
   mc C-up ;; Mission Control
   sls M-spc ;; Spotlight Search
