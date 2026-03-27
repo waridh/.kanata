@@ -288,7 +288,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  fn   lctl lmet lalt           spc            ralt rmet 
+  fn   lctl lalt lmet            spc            rmet     ralt
 )
 
 ;; The first layer defined is the layer that will be active by default when
@@ -300,7 +300,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @hra @hrs @hrd @hrf g    h    @hrj @hrk @hrl @hrsc    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @fnl lctl tab lalt spc            ralt rmet
+  @fnl lctl lalt tab  spc            rmet ralt
 )
 
 ;; macOS function key glyphs
